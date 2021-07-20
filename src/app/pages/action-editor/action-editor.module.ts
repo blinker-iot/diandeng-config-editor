@@ -4,6 +4,7 @@ import { ActionEditorComponent } from './action-editor.component';
 import { RouterModule } from '@angular/router';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '',

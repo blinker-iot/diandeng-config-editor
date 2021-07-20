@@ -1,19 +1,19 @@
 <div class="page">
     <div class="left-box">
-        <nz-table #basicTable [nzData]="listOfData">
+        <nz-table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Address</th>
-                    <th>Action</th>
+                    <th>序号</th>
+                    <th>动作名</th>
+                    <th>指令</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of basicTable.data">
-                    <td>{{ data.name }}</td>
-                    <td>{{ data.age }}</td>
-                    <td>{{ data.address }}</td>
+                <tr *ngFor="let data of inputObject;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{data.text}}</td>
+                    <td>{{data.cmd}}</td>
                     <td>
                         <a>删除</a>
                     </td>
