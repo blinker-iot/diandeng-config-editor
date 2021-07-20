@@ -1,6 +1,6 @@
 <div class="page">
     <div class="left-box">
-        <nz-table>
+        <nz-table #basicTable [nzData]="listOfData">
             <thead>
                 <tr>
                     <th>序号</th>
@@ -10,11 +10,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of inputObject;index as i">
+                <tr *ngFor="let data of basicTable.data;index as i">
                     <td>{{i+1}}</td>
                     <td>{{data.text}}</td>
-                    <td>{{data.cmd}}</td>
+                    <td>{{data.cmd | obj2str}}</td>
                     <td>
+                        <a>修改</a>
+                        <nz-divider nzType="vertical"></nz-divider>
                         <a>删除</a>
                     </td>
                 </tr>
@@ -22,6 +24,6 @@
         </nz-table>
     </div>
     <div class="right-box">
-        <json-editor [options]="editorOptions" [data]="inputObject"></json-editor>
+        <json-editor [options]="editorOptions" [data]="inputObject" (change)="getData($event)"></json-editor>
     </div>
 </div>

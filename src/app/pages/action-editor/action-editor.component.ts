@@ -8,26 +8,30 @@ import { JsonEditorOptions } from 'ang-jsoneditor';
 })
 export class ActionEditorComponent implements OnInit {
   editorOptions: JsonEditorOptions;
-  inputObject = [
+  inputObject: item[] = [
     {
-      "cmd": { "clz": "tap" },
+      "cmd": { "btn-b": "tap" },
+      "text": "玛尼玛尼哄"
+    },
+    {
+      "cmd": { "btn-a": "press" },
       "text": "天王盖地虎"
     },
     {
-      "cmd": { "blinker": "tap" },
+      "cmd": { "btn-a": "pressup" },
       "text": "宝塔镇河妖"
     },
     {
-      "cmd": { "btn-a": "on" },
+      "cmd": { "btn-c": "on" },
       "text": "打开?name"
     },
     {
-      "cmd": { "btn-a": "off" },
+      "cmd": { "btn-c": "off" },
       "text": "关闭?name"
     }
   ];
 
-  listOfData = []
+  listOfData: item[] = []
 
 
   constructor() {
@@ -40,4 +44,14 @@ export class ActionEditorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getData(e: any) {
+    console.log(e);
+    this.inputObject = e
+  }
+
+}
+
+interface item {
+  cmd: object,
+  text: string
 }

@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { FormsModule } from '@angular/forms';
-
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 @NgModule({
   declarations: [
@@ -14,14 +15,16 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    NgJsonEditorModule,
+    NzTableModule,
+    PipesModule,
+    NzDividerModule,
     RouterModule.forChild([
       {
         path: '',
         component: ActionEditorComponent
       }
-    ]),
-    NgJsonEditorModule,
-    NzTableModule
+    ])
   ]
 })
 export class ActionEditorModule { }
