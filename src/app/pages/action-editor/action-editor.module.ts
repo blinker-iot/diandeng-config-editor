@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActionEditorComponent } from './action-editor.component';
 import { RouterModule } from '@angular/router';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
-
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { NgJsonEditorModule } from 'ang-jsoneditor';
         component: ActionEditorComponent
       }
     ]),
-    NgJsonEditorModule
+    NgJsonEditorModule,
+    NzTableModule
   ]
 })
 export class ActionEditorModule { }
